@@ -3,13 +3,13 @@
 Async: beginning
 """
 import asyncio
-import random
+from typing import List
+task_wait_random = __import__('3-tasks').task_wait_random
 
 
-async def wait_random(max_delay: int = 10) -> float:
+async def task_wait_n(n: int, max_delay: int) -> List[float]:
     """
-    async func
+    Async func
     """
-    val = random.uniform(0, max_delay)
-    await asyncio.sleep(val)
-    return val
+    tasks: List[float] = [await task_wait_random(max_delay) for i in range(n)]
+    return sorted(tasks)
