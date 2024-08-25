@@ -62,4 +62,3 @@ class Server:
                 'page_size': page_size,
                 'data': data[index:next_index]
             }
-    
