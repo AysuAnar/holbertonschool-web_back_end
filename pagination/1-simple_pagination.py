@@ -44,3 +44,4 @@ class Server:
 
         start_index, end_index = index_range(page, page_size)
         return data[start_index:end_index]
+    
